@@ -3,7 +3,7 @@ import random
 import keyboard
 import pydirectinput
 import pyautogui
-import TwitchPlays_Connection
+import TwitchPlays_Connection as TwitchPlays_Connection
 from TwitchPlays_KeyCodes import *
 
 ##################### GAME VARIABLES #####################

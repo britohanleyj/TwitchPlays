@@ -1,10 +1,11 @@
+
 import concurrent.futures
 import pyttsx3 # GitHUb -> https://github.com/nateshmbhat/pyttsx3
 import random
 import keyboard
 import pydirectinput
 import pyautogui
-import TwitchPlays_Connection
+import TwitchPlays_Connection as TwitchPlays_Connection
 from TwitchPlays_KeyCodes import *
 
 ##################### GAME VARIABLES #####################
@@ -18,7 +19,7 @@ STREAMING_ON_TWITCH = False
 #region Youtube stuffs
 # If you're streaming on Youtube, replace this with your Youtube's Channel ID
 # Find this by clicking your Youtube profile pic -> Settings -> Advanced Settings
-YOUTUBE_CHANNEL_ID = "N/A" 
+YOUTUBE_CHANNEL_ID = "N/a" 
 
 # If you're using an Unlisted stream to test on Youtube, replace "None" below with your stream's URL in quotes.
 # Otherwise you can leave this as "None"
@@ -88,7 +89,7 @@ def handle_message(message):
         # Use the pydirectinput library to press or move the mouse
 
         ###################################
-        # Base Code
+        # Minecraft Base Code
         ###################################
 
         #region Basic WASD and JUMP commands
@@ -125,6 +126,20 @@ def handle_message(message):
             ReleaseKey(S) #release backwards key first
             HoldAndReleaseKey(W , 10) #start permanently running
         
+        if msg == "drop": 
+            if (random.randint(1, 10) == 1): #10% chance to hit
+                speak_message("Dropping Item")
+                HoldAndReleaseKey(Q , 0.5) #start permanently running
+
+        # Press the left mouse button down for 5 seconds, then release it
+        if msg == "mine": 
+            speak_message("mining")
+            pydirectinput.mouseDown(button="left")
+            time.sleep(0.5)
+            pydirectinput.mouseUp(button="left")
+
+
+
         ####################################
         ####################################
 
