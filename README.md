@@ -1,4 +1,5 @@
-# TwitchPlays
+# TwitchPlays 
+Built on from Doug Dougs Twitch Plays
 These are the three Python files I use that allows Twitch Chat or Youtube Chat to control your keyboard or mouse to play a game. You are welcome to use or adapt this code for your own content.
 
 To run the code you will need to install Python 3.9.  
@@ -8,6 +9,8 @@ python -m pip install pydirectinput
 python -m pip install pyautogui  
 python -m pip install pynput  
 python -m pip install requests  
+python -m pip install pyttsx3
+python -m pip install pygame
 
 Once Python is set up, simply change the Twitch username (or Youtube channel ID) in TwitchPlays_TEMPLATE.py, and you'll be ready to go.
 
